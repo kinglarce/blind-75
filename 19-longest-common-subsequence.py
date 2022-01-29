@@ -49,4 +49,3 @@ def longest_common_subsequence(text1, text2):
 
 print(longest_common_subsequence("ylqpejqbalahwr", "yrkzavgdmdgtqpg"))
 
-
