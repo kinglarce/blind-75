@@ -24,22 +24,38 @@
 #   1 |   *
 #      ----------------
 #
-def buy_sell_stocks(arr):
-  max_profit = 0 
-  left = 0
-  right = left + 1
-  while right < len(arr):
-    current_value = arr[left]
-    comparator_value = arr[right]
-    if current_value < comparator_value:
-      diff_value = comparator_value - current_value
-      max_profit = max(diff_value, max_profit)
-    else: 
-      left = right
-    right += 1
+def buy_and_sell_stock(prices):
+    max_profit = 0 
+    left = 0
+    right = left + 1
+    while right < len(prices):
+        if prices[left] < prices[right]:
+            diff_value = prices[right] - prices[left]
+            max_profit = max(diff_value, max_profit)
+        else: 
+            left = right
+        right += 1
+    return max_profit
 
+def buy_and_sell_stock(prices):
+  max_profit = 0
+  for i  in range(len(prices) - 1):
+      for j in range(i + 1, len(prices)):
+          profit = prices[j] - prices[i]
+          if profit > max_profit:
+              max_profit = profit
+              
   return max_profit
-
   
+def buy_and_sell_stock(prices):
+    min_price = float('inf')
+    max_profit = 0
+    for i in range(len(prices)):
+        if prices[i] < min_price:
+            min_price = prices[i]
+        elif prices[i] - min_price > max_profit:
+            max_profit = prices[i] - min_price
+        
+    return max_profit 
 
-print(buy_sell_stocks([7,1,5,3,6,4]))
+print(buy_and_sell_stock([7,1,5,3,6,4]))
