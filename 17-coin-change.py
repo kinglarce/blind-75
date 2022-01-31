@@ -46,19 +46,19 @@ Output: 0
 #   return count if count > 0 else -1
 
 # Dynamic programming - Bottom up approach  
-# def coin_change(coins, amount):
-#     dp = [float('inf')] * (amount+1)
-#     dp[0] = 0 # compute amount 0 is always zero coin
+def coin_change(coins, amount):
+    dp = [float('inf')] * (amount+1)
+    dp[0] = 0 # compute amount 0 is always zero coin
     
-#     for coin in coins:
-#       for a in range(coin, amount+1):
-#         dp_prev_val = dp[a-coin]
-#         # the plus +1 comes from the coin being use
-#         # like incrementing +1 for each coin used
-#         dp_plus_1 = dp_prev_val+1
-#         dp_cur = dp[a]
-#         dp[a] = min(dp_cur, dp_plus_1)
-#     return dp[amount] if dp[amount] != float('inf') else -1
+    for coin in coins:
+      for a in range(coin, amount+1):
+        dp_prev_val = dp[a-coin]
+        # the plus +1 comes from the coin being use
+        # like incrementing +1 for each coin used
+        dp_plus_1 = dp_prev_val+1
+        dp_cur = dp[a]
+        dp[a] = min(dp_cur, dp_plus_1)
+    return dp[amount] if dp[amount] != float('inf') else -1
 
 # dp = [0,1,1,2,2,3,3,4,4,5,5,6]
 # Coin 2
