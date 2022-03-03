@@ -1,8 +1,5 @@
 """
-Problem:
-Given two integers a and b, return the sum of the two integers without using the operators + and -.
-
-Example 1:
+https://leetcode.com/problems/sum-of-two-integers/
 Input: a = 1, b = 2
 Output: 3
 Example 2:
