@@ -14,17 +14,17 @@ Input: text1 = "abc", text2 = "def"
 Output: 0
 Explanation: There is no such common subsequence, so the result is 0.
 """
-# Brute force - Recursive approach O(n*m), space of O(n*m)
-def dfs(text1, text2, i, j):
-    if i == len(text1) or j == len(text2):
-        return 0
-    if text1[i] == text2[j]:
-        return 1 + dp(text1, text2, i+1, j+1)
-    else:
-        return max(dp(text1,text2,i,j+1),dp(text1,text2,i+1,j))
+# # Brute force - Recursive approach O(n*m), space of O(n*m)
+# def dfs(text1, text2, i, j):
+#     if i == len(text1) or j == len(text2):
+#         return 0
+#     if text1[i] == text2[j]:
+#         return 1 + dp(text1, text2, i+1, j+1)
+#     else:
+#         return max(dp(text1,text2,i,j+1),dp(text1,text2,i+1,j))
 
-def longest_common_subsequence(text1, text2):
-    return dfs(text1,text2,0,0)
+# def longest_common_subsequence(text1, text2):
+#     return dfs(text1,text2,0,0)
 
 #Dynamic programming 
 def longest_common_subsequence(text1, text2):
